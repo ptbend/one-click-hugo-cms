@@ -1,13 +1,70 @@
-{{ define "main" }}
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Logic</title>
+    <link rel="stylesheet" href="../../src/css/app.css">
+    <link href="https://fonts.googleapis.com/css?family=Rokkitt" rel="stylesheet">
+  </head>
+  <body>
+    <div class="off-canvas" id="offCanvas" data-off-canvas>
+      <div class="curtain-menu-button" data-curtain-menu-button data-toggle="offCanvas">
+        <div class="curtain-menu-button-toggle">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+        </div>
+      </div>
+      <div class="curtain-menu">
+        <div class="curtain"></div>
+        <div class="curtain"></div>
+        <div class="curtain"></div>
+        <div class="curtain-menu-wrapper">
+          <ul class="curtain-menu-list menu vertical">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="why.html">Why</a></li>
+            <li><a href="#">Who</a></li>
+            <li><a href="#">How</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
-{{ partial "jumbotron" (dict "imageUrl" .Params.image "title" .Title "subtitle" .Params.subtitle) }}
+      <div class="top-content-section">
+        <div class="top-bar">
+          <div class="top-bar-left">
+            <img src="img/sitelogic_logo.png" alt="logo">
+          </div>
+          <div class="top-bar-right">
+            <div class="curtain-menu-button" data-curtain-menu-button data-toggle="offCanvas">
+              <div class="curtain-menu-button-toggle">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+              </div>
+            </div>
 
-{{ partial "short-text" .Params.blurb}}
+          </div>
+        </div>
+      </div>
+<!--end nav -->
+      <div class="grid-container">
+        <div class="grid-x grid-margin-x">
+          <div class="row center-on-page">
+            <h1>We improve websites<br>for independent businesses.</h1>
+            <button class="hollow button secondary large">Learn Why</button>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <p>©2018 Site Logic LLC</p>
+      </footer>
 
-{{ partial "2-up" .Params }}
 
-{{ partial "text-and-image" (dict "heading" .Params.values.heading "text" .Params.values.text "buttonText" "Read more" "buttonLink" "/values") }}
-
-{{ partial "blog" . }}
-
-{{ end }}
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/what-input/dist/what-input.js"></script>
+    <script src="node_modules/foundation-sites/dist/js/foundation.js"></script>
+    <script src="js/min/app-min.js"></script>
+  </body>
+</html>
