@@ -1,0 +1,178 @@
+.center-on-page {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    margin-right: -40%;
+    transform: translate(-50%, -50%)
+}
+
+
+footer {
+  background-color: $black;
+  width: 100%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  p {
+    color: $white;
+    text-align: center;
+    margin: 0 1.2rem;
+    font-weight: 400;
+    padding: 1.5rem 0;
+  }
+}
+
+.sticky-footer {
+}
+
+// menu
+
+$curtain-menu-color: $primary-color;
+$curtain-menu-text-color: $white;
+$curtain-menu-font-size: rem-calc(45);
+$curtain-menu-button-size: rem-calc(40);
+
+.curtain-menu {
+  z-index: 2;
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  pointer-events: none;
+}
+
+.curtain-menu-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translateY(-100%);
+  transition: transform 0.5s;
+  transition-delay: 0.5s;
+  visibility: hidden;
+
+  .curtain-menu-list {
+    li {
+      width: 100%;
+      font-weight: 100;
+      font-size: $curtain-menu-font-size;
+      min-height: $curtain-menu-font-size;
+      padding: 1rem;
+      text-align: center;
+      justify-content: center;
+      transition: all 0.2s ease-in;
+
+      &:hover {
+        background: rgba($white, 0.7);
+
+        a {
+          color: $curtain-menu-color;
+        }
+      }
+
+      a {
+        color: $curtain-menu-text-color;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+.curtain-menu .curtain {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: flex 0.45s;
+
+  &:nth-child(2) {
+    flex:1 0 100%;
+    background: transparent;
+  }
+
+  &:nth-child(odd){
+    background: $black;
+  }
+}
+
+.curtain-menu-button {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  z-index: 5;
+}
+
+.curtain-menu-button-toggle {
+  width: $curtain-menu-button-size;
+  height: $curtain-menu-button-size;
+  border-radius: 5000px;
+  border: 1px solid $black;
+  background: $primary-color;
+  position: relative;
+  cursor: pointer;
+
+  div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 3px;
+    background: $curtain-menu-color;
+    transition: transform 0.3s;
+    transition-delay: 0.5s;
+  }
+
+  .bar1{
+    transform: translateX(-50%)translateY(-50%)rotate(-90deg);
+    background: #000000;
+  }
+
+  .bar2{
+    transform: translateX(-50%)translateY(-50%)rotate(-180deg);
+    background-color: $black;
+  }
+
+  &:hover {
+    background: $primary-color;
+
+    div{
+      background: $black;
+    }
+  }
+
+  &:active {
+    box-shadow: none;
+  }
+}
+
+.curtain-menu-open {
+  .curtain:nth-child(2) {
+    flex: 0 0 0%;
+  }
+
+  .curtain-menu-wrapper {
+    transform: translateY(0%);
+    visibility: visible;
+    pointer-events:all;
+  }
+
+ .curtain-menu-button-toggle {
+    .bar1{
+      transform: translateX(-50%)translateY(-50%)rotate(-45deg);
+    }
+
+    .bar2{
+      transform: translateX(-50%)translateY(-50%)rotate(-135deg);
+    }
+  }
+}

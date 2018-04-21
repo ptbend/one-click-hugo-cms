@@ -1,19 +1,39 @@
-<nav class="overflow-x-scroll overflow-x-visible-ns flex justify-between items-center center bg-white divider-grey relative">
+<div class="off-canvas" id="offCanvas" data-off-canvas>
+	<div class="curtain-menu-button" data-curtain-menu-button data-toggle="offCanvas">
+		<div class="curtain-menu-button-toggle">
+			<div class="bar1"></div>
+			<div class="bar2"></div>
+		</div>
+	</div>
+	<div class="curtain-menu">
+		<div class="curtain"></div>
+		<div class="curtain"></div>
+		<div class="curtain"></div>
+		<div class="curtain-menu-wrapper">
+			<ul class="curtain-menu-list menu vertical">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="why.html">Why</a></li>
+				<li><a href="#">Who</a></li>
+				<li><a href="#">How</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
 
-	<!-- Logo -->
-	<a href="/" class="pa3 db mr4 h-100 w3 flex-none">
-		<img src="/img/logo.svg" alt="Kaldi logo" class="br0 db mb0 w-100"/>
-	</a>
+	<div class="top-content-section">
+		<div class="top-bar">
+			<div class="top-bar-left">
+				<img src="img/sitelogic_logo.png" alt="logo">
+			</div>
+			<div class="top-bar-right">
+				<div class="curtain-menu-button" data-curtain-menu-button data-toggle="offCanvas">
+					<div class="curtain-menu-button-toggle">
+						<div class="bar1"></div>
+						<div class="bar2"></div>
+					</div>
+				</div>
 
-	<!-- Primary Nav -->
-	<ul class="flex b grey-3">
-		<li><a href="/products" class="pa3 no-underline db">Products</a></li>
-
-		<li><a href="/values" class="pa3 no-underline db">Values</a></li>
-
-		<li><a href="/post" class="pa3 no-underline db">Blog</a></li>
-
-		<li><a href="/contact" class="pa3 no-underline db">Contact</a></li>
-	</ul>
-
-</nav>
+			</div>
+		</div>
+	</div>
